@@ -15,7 +15,11 @@ sudo service mysql restart
 
 You can now connect to mysql from docker containers!
 
-If you want to use phpmyadmin, you can now use it like this:
+If you want to use phpmyadmin, you'll need to create a username and password for it to use
+You can connect to mysql via the terminal with
+sudo mysql 
+
+after your username / password is created you can run phpadmin with:
 docker run --name myadmin -d -e PMA_HOST=$(hostname -i) -e PMA_USER=my_user -e PMA_PASSWORD=my_pass -p 8080:80 phpmyadmin
 
 Then use the preview application in cloud9 to get to the web ui
