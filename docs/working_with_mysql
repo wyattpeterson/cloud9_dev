@@ -2,7 +2,6 @@ The cloud9 ubuntu default image comes with mysql already installed! Yay!
 However! It only binds to 127.0.0.1 by default
 If you want to connect to MySQL on a docker container running on your cloud9 instance there are a few different solutions
 This stack overflow article is excellent
-
 https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach
 
 The quickest, but least secure, solution is to bind to 0.0.0.0
