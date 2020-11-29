@@ -1,0 +1,22 @@
+The cloud9 ubuntu default image comes with mysql already installed! Yay!
+However! It only binds to 127.0.0.1 by default
+If you want to connect to MySQL on a docker container running on your cloud9 instance there are a few different solutions
+This stack overflow article is excellent
+
+https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach
+
+The quickest, but least secure, solution is to bind to 0.0.0.0
+
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf 
+
+#change the bind-address to:
+#bind-address            = 0.0.0.0
+
+sudo service mysql restart
+
+You can now connect to mysql from docker containers!
+
+If you want to use phpmyadmin, you can now use it like this:
+docker run --name myadmin -d -e PMA_HOST=$(hostname -i) -e PMA_USER=my_user -e PMA_PASSWORD=my_pass -p 8080:80 phpmyadmin
+
+Then use the preview application in cloud9 to get to the web ui
