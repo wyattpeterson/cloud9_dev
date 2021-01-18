@@ -1,0 +1,9 @@
+https://docs.amplify.aws/start/q/integration/react
+
+change dev server binding to 8080
+https://create-react-app.dev/docs/advanced-configuration/
+
+env var:
+PORT=8080
+
+binds to all hosts by default
